@@ -1,0 +1,33 @@
+.links-container{
+		background: #fffefa;
+		margin:0;
+		padding:0;
+		display:flex;
+		text-decoration: none;
+		list-style: none;
+		flex-wrap: wrap;
+		border:solid 1px #d6d6d6;
+}
+
+
+.links-container>a{
+	text-decoration: none;
+	color:black;
+	margin:0;
+	padding:0;
+	text-align: center;
+	flex-basis: 50%;
+}
+.links-container>a:hover{
+	color:grey;
+	cursor:pointer;
+}
+
+@media screen and (min-width:575px){
+	.links-container{
+		border:none;
+		flex-wrap: nowrap;
+		font-size: 0.25rem;
+		align-self: flex-end;
+	}
+}

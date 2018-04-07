@@ -1,0 +1,129 @@
+html, body {
+  height: 100%;
+}
+
+body{
+	font-family: 'Source Serif Pro', serif;
+	color:#232323;
+	background-color: #d6d6d6;
+}
+
+.App{
+	height: 100vh;
+	display:flex;
+	flex-direction: column;
+}
+
+.trapezoid{
+	border-top: 15px solid #fffefa;
+	border-left: 5.5px solid transparent;
+	border-right: 5.5px solid transparent;
+	background:#d6d6d6;
+	height: 0;
+	width: auto;
+	z-index:1;
+	transform: translateZ(0);
+}
+
+.content-container{
+	  flex: 1 0 auto;
+		transition: max-width 0.3s;
+}
+
+.card{
+	padding:0 5px;
+	background: #d6d6d6;
+	overflow: scroll;
+	height:100%;
+}
+
+
+
+footer{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	height:30px;
+	background:#fffefa;
+	border-top:solid 1px #d6d6d6;
+	flex-shrink: 0;
+	transition: max-width 0.3s;
+}
+
+@media screen and (min-width:575px){
+	body{
+		background: #d6d6d6;  /* fallback for old browsers */
+		/* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+		background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"), linear-gradient(45deg, rgba(250, 211, 204, 1), rgba(252, 242, 207, 1), rgba(210, 238, 244, 1)); */
+		background: -webkit-linear-gradient(45deg, rgba(236, 100, 75, 0.4), rgba(245, 215, 110, 0.4), rgba(129, 207, 224, 0.4));  /* Chrome 10-25, Safari 5.1-6 */
+	  background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	.content-container{
+		margin:0;
+		background:#fffefa;
+	}
+	.card{
+		margin:0 25px;
+		padding:0;
+		border:none;
+	}
+	footer{
+		margin:0;
+		border:none;
+		padding:10px;
+		font-size: 1.2em;
+		width:100%;
+	}
+}
+
+@media screen and (min-width:600px){
+	.content-container{
+		max-width:600px;
+		margin:0 auto;
+	}
+	footer{
+		max-width:600px;
+		margin:0 auto;
+		padding-left:0;
+		padding-right:0;
+
+	}
+
+}
+
+/* @media screen and (min-width:750px){
+	.content-container{
+		min-width:600px;
+		width:auto;
+		margin:0 auto;
+		max-width:auto;
+	}
+	footer{
+		margin:0 auto;
+		width:auto;
+		max-width:auto;
+		min-width:600px;
+		padding-left:0;
+		padding-right:0;
+	}
+} */
+
+@media screen and (min-width:880px){
+	.content-container{
+		max-width:880px;
+		margin:0 auto;
+	}
+	footer{
+		margin:0 auto;
+		max-width:880px;
+		padding-left:0;
+		padding-right:0;
+	}
+	.card{
+		margin-left:75px;
+		margin-right:75px;
+		border:none;
+		margin-top:18.75px;
+	}
+}

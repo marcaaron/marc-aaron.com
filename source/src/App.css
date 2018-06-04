@@ -33,7 +33,7 @@ body{
 .card{
 	padding:0 5px;
 	background: #d6d6d6;
-	overflow: scroll;
+	overflow: hidden;
 	height:100%;
 }
 

@@ -34,7 +34,7 @@ body{
 
 .card{
 	padding:0 5px;
-	background: #d6d6d6;
+	background: transparent;
 	overflow: hidden;
 	height:100%;
 }

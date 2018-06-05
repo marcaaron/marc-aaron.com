@@ -20,7 +20,10 @@ class Tab extends Component {
 		}
 
     return (
-			<div onClick={()=>handleClick(values.name)} className={`tab tab-${values.name}`}>
+			<div
+        onClick={()=>handleClick(values.name)}
+        className={`tab tab-${values.name}`}
+        >
 					<div style={hide}>
 						<i key={`icon_${values.name}`}
 							className={`fas fa-lg fa-${values.icon}`}
@@ -42,8 +45,6 @@ class Tab extends Component {
 						<span key={`text_${values.name}`} style={textStyle} className="tab-text">{values.text}</span>
 
 				}
-
-
 			</div>
     );
   }

@@ -17,7 +17,13 @@ header{
 	font-size:2.5em;
 	font-weight: 700;
 	transition:all 0.2s;
+  cursor:pointer;
 }
+
+.back-button:hover{
+  color:rgba(0,0,0,0.5);
+}
+
 .role-box{
 	display:flex;
 	font-weight: 400;
@@ -37,11 +43,6 @@ header{
 	transform: scale(1,1) rotate(0deg) translate(0px,0px);
 	transition: opacity 0.3s, transform 3s;
 
-}
-
-header>span:hover{
-	cursor:pointer;
-	color:grey;
 }
 
 @media screen and (min-width:575px){

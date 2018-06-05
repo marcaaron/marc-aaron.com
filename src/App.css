@@ -12,6 +12,7 @@ body{
 	height: 100vh;
 	display:flex;
 	flex-direction: column;
+  min-width: 320px;
 }
 
 .trapezoid{
@@ -28,6 +29,7 @@ body{
 .content-container{
 	  flex: 1 0 auto;
 		transition: max-width 0.3s;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 .card{
@@ -36,8 +38,6 @@ body{
 	overflow: hidden;
 	height:100%;
 }
-
-
 
 footer{
 	display:flex;
@@ -48,6 +48,7 @@ footer{
 	border-top:solid 1px #d6d6d6;
 	flex-shrink: 0;
 	transition: max-width 0.3s;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 @media screen and (min-width:575px){

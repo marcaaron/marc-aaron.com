@@ -18,19 +18,25 @@
 	justify-content: center;
 	height:100%;
 	width:100%;
+  cursor:pointer;
 }
+
 .tab-projects{
 	border-right: 1px solid #d6d6d6;
 }
+
 .tab-links{
 	border-left: 1px solid #d6d6d6;
 }
+
 .tab-text{
 	font-size: 0.8em;
 	margin-top:5px;
 	color: #595959;
 	transition:transform 0.2s;
+  user-select: none;
 }
+
 .triangle{
 	opacity:0;
 	width:1px;

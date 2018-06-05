@@ -93,7 +93,6 @@ class TabContainer extends Component {
 
 			</div>,
 			<div key="tri" className="triangle" style={triangleStyle} ></div>
-
     ];
   }
 }

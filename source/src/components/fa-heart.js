@@ -30,7 +30,7 @@ class FaHeart extends Component{
   };
 
   handleMouseEnter = () => {
-    const svgStyle = {width:'100%', maxWidth:'40px', transition:'max-width 0.3s'};
+    const svgStyle = {width:'100%', maxWidth:'30px', transition:'max-width 0.3s'};
     const innerStyle = {};
     const outerStyle = {fill:'black', transition:'fill 0.8s'};
     const isHovering = true;

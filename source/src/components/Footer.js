@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import '../css/Header.css';
+import FaHeart from './fa-heart';
 
 class Footer extends Component {
   render() {
     return (
 			<footer>
 				<span>Made with &nbsp;</span>
-				<i style={{color:'tomato'}} className="far fa-heart"></i>
+				<FaHeart/>
 				<span>&nbsp; in Washington</span>
 			</footer>
     );

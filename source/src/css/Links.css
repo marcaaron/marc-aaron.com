@@ -76,7 +76,7 @@
 
 .before{
 
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, -200%);
   transition: transform 0.1s linear;
 }
 

@@ -3,9 +3,36 @@ import '../css/Links.css';
 
 class Links extends Component {
 
-	alertBox = () =>{
-		alert('marc dot aaron dot glasser at g mail dot com');
-	}
+  state = {
+    modalIsOpen: false
+  }
+
+  componentDidMount(){
+    console.log(this.refs.modal);
+  }
+
+  handleModalClick = (e) => {
+    e.preventDefault();
+    this.setState({modalIsOpen:!this.state.modalIsOpen}, ()=>{
+      this.openModal();
+    });
+  }
+
+  openModal = () => {
+    if(this.state.modalIsOpen){
+      this.refs.modal.style.opacity='1';
+      this.refs.modal.classList.add('after');
+    }else{
+      this.refs.modal.classList.remove('after');
+    }
+  }
+
+  shouldModalHide = () => {
+    if(!this.state.modalIsOpen){
+      this.refs.modal.style.opacity='0';
+    }
+  }
+
   render() {
     return (
 			<ul className="links-container">
@@ -24,11 +51,19 @@ class Links extends Component {
 						<i style={{margin:'10px'}} className="fab fa-6x fa-twitter"></i>
 					</li>
 				</a>
-				<a onClick={this.alertBox}>
+				<a onClick={this.handleModalClick}>
 				<li>
 					<i style={{margin:'10px'}} className="far fa-6x fa-envelope"></i>
 				</li>
 				</a>
+        <div className="modal before"
+          onTransitionEnd={this.shouldModalHide}
+          ref="modal"
+        >
+          <div className="modal-header">Contact Information</div>
+          <div className="modal-body">marc dot aaron dot glasser AT gmail dot com</div>
+          <button onClick={this.handleModalClick} className="modal-btn">Bye Felicia!</button>
+        </div>
 			</ul>
     );
   }

@@ -8,7 +8,6 @@ class Links extends Component {
   }
 
   componentDidMount(){
-    console.log(this.refs.modal);
   }
 
   handleModalClick = (e) => {

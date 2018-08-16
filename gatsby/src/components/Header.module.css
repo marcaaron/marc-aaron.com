@@ -6,6 +6,29 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.mobileHeader {
+	display:flex;
+	flex-direction: column;
+	height:80px;
+	background:#fffefa;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Mobile */
+@media screen and (max-width: 574px){
+  .header{
+    display: none;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 575px){
+  .mobileHeader {
+    display: none;
+  }
+}
+
 .nameBox{
 	display:flex;
 	font-weight: 700;

@@ -83,3 +83,16 @@
 		font-size: 0.8em;
 	}
 }
+
+/* Mobile */
+@media screen and (max-width: 574px){
+  .projectImageDesktop{
+    display: none;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 575px){
+  .projectImageMobile {
+    display: none;
+  }
+}

@@ -12,16 +12,8 @@ export default class ProjectTemplate extends Component {
   			<div className={styles.projectName}>
   				{project.name}
   			</div>
-  			<Media query="(max-width: 574px)">
-          { matches => matches &&
-            <img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.img.url}/>
-          }
-  			</Media>
-  			<Media query="(min-width: 575px)">
-  				{ matches => matches &&
-            <img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.imgMock.url}/>
-          }
-  			</Media>
+        <img className={`${styles.projectImage} ${styles.projectImageMobile}`} alt={`A screenshot of the ${project.name} application.`} src={project.img.url}/>
+        <img className={`${styles.projectImage} ${styles.projectImageDesktop}`} alt={`A screenshot of the ${project.name} application.`} src={project.imgMock.url}/>
   			<div className={styles.projectInformation}>
   				<div className={styles.projectTitle}>
   					<em>{project.title}</em>

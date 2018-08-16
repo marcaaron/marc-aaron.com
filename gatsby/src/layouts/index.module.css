@@ -100,3 +100,10 @@ body{
 		margin-top:18.75px;
 	}
 }
+
+/* Desktop */
+@media screen and (min-width: 575px){
+  .tcMobile {
+    display:none;
+  }
+}

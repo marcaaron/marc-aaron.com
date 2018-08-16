@@ -1,0 +1,12 @@
+/* Mobile */
+@media screen and (max-width: 574px){
+  .listDesktop{
+    display: none;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 575px){
+  .listMobile {
+    display: none;
+  }
+}

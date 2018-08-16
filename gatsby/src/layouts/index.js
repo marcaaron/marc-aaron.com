@@ -5,7 +5,6 @@ import styles from './index.module.css';
 import Header from '../components/Header'
 import Footer from '../components/Footer';
 import TabContainer from '../components/TabContainer';
-import Media from "react-media";
 
 import './index.css';
 
@@ -87,18 +86,14 @@ class Layout extends Component {
           ]}
         />
         <Header _onTabClick={this._onTabClick} pathname={pathname} siteTitle={data.site.siteMetadata.title} />
-        <Media query="(max-width: 574px)">
-          {matches => matches &&
-            <Fragment>
-              <TabContainer
-                _onTabClick={this._onTabClick}
-                selected={selected}
-                stickyTab={stickyTab}
-              />
-              <div className={styles.trapezoid} style={trapezoidStyle}/>
-            </Fragment>
-          }
-        </Media>
+        <div className={styles.tcMobile}>
+          <TabContainer
+            _onTabClick={this._onTabClick}
+            selected={selected}
+            stickyTab={stickyTab}
+          />
+          <div className={styles.trapezoid} style={trapezoidStyle}/>
+        </div>
         <div className={styles.card}>
           {children()}
         </div>

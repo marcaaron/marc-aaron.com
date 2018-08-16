@@ -5,11 +5,7 @@ import Media from "react-media";
 class Links extends Component {
   render() {
     return (
-      <Fragment>
-        <Media query="(max-width: 574px)">
-          { matches => matches ? <LinkList size={40}/> : <LinkList size={24}/> }
-        </Media>
-      </Fragment>
+      <LinkList/>
     );
   }
 }

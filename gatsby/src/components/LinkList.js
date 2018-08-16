@@ -37,29 +37,28 @@ export default class LinkList extends Component {
   }
 
   render(){
-    const { size } = this.props;
     const { modalStyles } = this.state;
     const { handleModalClick, shouldModalHide } = this;
     return(
     	<ul className={styles.linksContainer}>
     		<a href="http://github.com/marcaaron">
     			<li>
-    				<GitHub size={size}/>
+    				<GitHub/>
     			</li>
     		</a>
     		<a href="http://linkedin.com/in/marcaaron">
     			<li>
-    				<LinkedIn size={size}/>
+    				<LinkedIn/>
     			</li>
     		</a>
     		<a href="http://twitter.com/marcaarong">
     			<li>
-    				<Twitter size={size}/>
+    				<Twitter/>
     			</li>
     		</a>
     		<a onClick={handleModalClick}>
     		<li>
-    			<Mail size={size}/>
+    			<Mail/>
     		</li>
     		</a>
         <div className={modalStyles.join(' ')}

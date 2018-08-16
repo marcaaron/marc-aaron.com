@@ -21,13 +21,12 @@ const renderName = (textArray, pathname) => {
 
 const Header = ({ siteTitle, pathname, _onTabClick }) =>
 <Fragment>
-	<Media query="(max-width:574px)">
-    {matches => matches ?
-  		<Link className={styles.header} to="/" onClick={()=>_onTabClick('projects')}>
+
+  		<Link className={styles.mobileHeader} to="/" onClick={()=>_onTabClick('projects')}>
   			<span className={styles.name}>Marc Aaron Glasser</span>
   			<span className={styles.role}>Web Developer</span>
   		</Link>
-      :
+
     	<header className={styles.header}>
     		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
     			<div className={styles.backButton}
@@ -54,7 +53,5 @@ const Header = ({ siteTitle, pathname, _onTabClick }) =>
           </div>
     		</div>
     	</header>
-    }
-  </Media>
 </Fragment>
 export default Header

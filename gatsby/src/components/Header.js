@@ -22,43 +22,39 @@ const renderName = (textArray, pathname) => {
 const Header = ({ siteTitle, pathname, _onTabClick }) =>
 <Fragment>
 	<Media query="(max-width:574px)">
-    {matches => matches &&
+    {matches => matches ?
   		<Link className={styles.header} to="/" onClick={()=>_onTabClick('projects')}>
   			<span className={styles.name}>Marc Aaron Glasser</span>
   			<span className={styles.role}>Web Developer</span>
   		</Link>
+      :
+    	<header className={styles.header}>
+    		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
+    			<div className={styles.backButton}
+            style={
+              pathname !== "/" ?
+              {transform:'scale(1,1)', opacity:'1'} :
+              {transform:'scale(0,0)',opacity:'0'}
+            }>
+            <ArrowLeft/>
+    				<span>&nbsp; Projects</span>
+    			</div>
+    			<div className={styles.nameBox}>
+            {renderName(name, pathname)}
+    			</div>
+    			<div className={styles.roleBox}>
+            {renderName(role, pathname)}
+    			</div>
+    		</Link>
+    		<div className={styles.headerRight}>
+    			<Links/>
+          <div className={styles.headerRightNavLinks}>
+    				<Link to="/about" onClick={()=>_onTabClick('about')} className={styles.aboutMeLink}>About Me</Link>
+    				<Link to="/posts" onClick={()=>_onTabClick('links')} className={styles.aboutMeLink}>Posts</Link>
+          </div>
+    		</div>
+    	</header>
     }
-	</Media>
-  <Media query="(min-width: 575px)">
-    {
-      matches => matches &&
-      	<header className={styles.header}>
-      		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
-      			<div className={styles.backButton}
-              style={
-                pathname !== "/" ?
-                {transform:'scale(1,1)', opacity:'1'} :
-                {transform:'scale(0,0)',opacity:'0'}
-              }>
-              <ArrowLeft/>
-      				<span>&nbsp; Projects</span>
-      			</div>
-      			<div className={styles.nameBox}>
-              {renderName(name, pathname)}
-      			</div>
-      			<div className={styles.roleBox}>
-              {renderName(role, pathname)}
-      			</div>
-      		</Link>
-      		<div className={styles.headerRight}>
-      			<Links/>
-            <div className={styles.headerRightNavLinks}>
-      				<Link to="/about" onClick={()=>_onTabClick('about')} className={styles.aboutMeLink}>About Me</Link>
-      				<Link to="/posts" onClick={()=>_onTabClick('links')} className={styles.aboutMeLink}>Posts</Link>
-            </div>
-      		</div>
-      	</header>
-      }
   </Media>
 </Fragment>
 export default Header

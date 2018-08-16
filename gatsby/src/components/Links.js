@@ -7,10 +7,7 @@ class Links extends Component {
     return (
       <Fragment>
         <Media query="(max-width: 574px)">
-          { matches => matches && <LinkList size={40}/> }
-        </Media>
-        <Media query="(min-width: 575px)">
-          { matches => matches && <LinkList size={24}/> }
+          { matches => matches ? <LinkList size={40}/> : <LinkList size={24}/> }
         </Media>
       </Fragment>
     );

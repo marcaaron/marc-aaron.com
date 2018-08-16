@@ -8,16 +8,12 @@ const ProjectItem = ({project}) => {
   return (
     <Fragment>
       <Media query="(max-width: 574px)">
-        {matches => matches &&
+        {matches => matches ?
           <Link to={`/${project.slug}`} className={styles.projectItem}>
             {project.name}
             <FAChevronRight size={20} color={'#c1c1c1'}/>
           </Link>
-        }
-      </Media>
-      <Media query="(min-width: 575px)">
-        {
-          matches => matches &&
+        :
           <Link to={`/${project.slug}`} className={styles.projectItem}>
             <span className={styles.projectNameTag}>{project.name}</span>
             <div className={styles.imgContainer}>

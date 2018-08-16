@@ -83,14 +83,12 @@ class Layout extends Component {
         />
         <Header pathname={pathname} siteTitle={data.site.siteMetadata.title} />
         <MediaQuery maxWidth={574}>
-          <div>
-            <TabContainer
-              _onTabClick={this._onTabClick}
-              selected={selected}
-              stickyTab={stickyTab}
-            />
-            <div className={styles.trapezoid} style={trapezoidStyle}/>
-          </div>
+          <TabContainer
+            _onTabClick={this._onTabClick}
+            selected={selected}
+            stickyTab={stickyTab}
+          />
+          <div className={styles.trapezoid} style={trapezoidStyle}/>
         </MediaQuery>
         <div className={styles.card}>
           {children()}

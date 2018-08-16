@@ -26,10 +26,10 @@ const ProjectTemplate = ({data}) => {
 				<i className="fas fa-code-branch fa-3x"></i>
 				<div className={styles.projectUrl}>
           <div>
-  					<a href={`http://${project.url}`}><strong>GitHub Repo</strong></a>
+  					<a href={project.url}><strong>GitHub Repo</strong></a>
           </div>
           <div>
-  					<a href={`http://${project.deployUrl}`}><strong>Live Version</strong></a>          
+  					<a href={project.deployUrl}><strong>Live Version</strong></a>
           </div>
 				</div>
 			</div>

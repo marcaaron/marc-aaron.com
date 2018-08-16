@@ -11,6 +11,7 @@
 /source/build
 /source/node_modules
 /.cache
+/gatsby/node_modules
 
 # misc
 .DS_Store

@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 body{
 	font-family: 'Source Serif Pro', serif;
 	color:#232323;
@@ -9,17 +5,17 @@ body{
 }
 
 .app{
-	height: 100vh;
 	display:flex;
 	flex-direction: column;
   min-width: 320px;
+  min-height: 100vh;
 }
 
 .trapezoid{
 	border-top: 15px solid #fffefa;
 	border-left: 5.5px solid transparent;
 	border-right: 5.5px solid transparent;
-	background:#d6d6d6;
+	background:transparent;
 	height: 0;
 	width: auto;
 	z-index:1;
@@ -49,14 +45,11 @@ footer{
 	transition: max-width 0.3s;
   box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.2);
 }
-
+body{
+	background: #d6d6d6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(45deg, rgba(236, 100, 75, 0.4), rgba(245, 215, 110, 0.4), rgba(129, 207, 224, 0.4));  /* Chrome 10-25, Safari 5.1-6 */
+}
 @media screen and (min-width:575px){
-	body{
-		background: #d6d6d6;  /* fallback for old browsers */
-		background: -webkit-linear-gradient(45deg, rgba(236, 100, 75, 0.4), rgba(245, 215, 110, 0.4), rgba(129, 207, 224, 0.4));  /* Chrome 10-25, Safari 5.1-6 */
-	  background-repeat: no-repeat;
-		background-attachment: fixed;
-	}
 	.contentContainer{
 		margin:0;
 		background:#fffefa;

@@ -22,7 +22,7 @@ const PostLink = ({url,title, source, img, createdAt}) => (
 const Blogs = ({posts}) => {
   return(
     <div className={styles.pageWrapper}>
-      <h2 style={{margin:0, padding:15, textAlign: 'center'}}>Recent Posts</h2>
+      <h2 className={styles.pageHeading}>Recent Posts</h2>
       <ul className={styles.linkList}>
         {posts.map(({node})=><PostLink key={node.id} {...node}/>)}
       </ul>

@@ -10,6 +10,13 @@
   transition: border 0.1s;
 }
 
+.pageHeading{
+  margin:0;
+  padding:15px;
+  padding-top:0;
+  text-align: center;
+}
+
 .title{
   margin-top: 0;
   margin-bottom: 5px;
@@ -64,4 +71,16 @@
   border-top: 2px solid white;
   border-left: 2px solid white;
   transition: transform 0.1s;
+}
+
+@media screen and (min-width:575px){
+  .pageHeading{
+    padding:15px;
+  }
+}
+
+@media screen and (min-width:880px){
+  .pageHeading{
+    padding-top:0;
+  }
 }

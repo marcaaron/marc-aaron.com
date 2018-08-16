@@ -29,7 +29,6 @@ class Layout extends Component {
     }else{
       selected = 'projects';
     }
-    console.log(selected);
     if (selected !== state.selected) {
       return {
         selected

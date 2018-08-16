@@ -5,9 +5,7 @@ import Projects from '../components/Projects';
 const IndexPage = ({data}) => {
   const { allProject: { edges } } = data;
   return(
-    <div>
-      <Projects projects={edges}/>
-    </div>
+    <Projects projects={edges}/>
   )
 }
 

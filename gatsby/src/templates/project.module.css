@@ -44,6 +44,19 @@
 	margin:20px;
 	margin-top:10px;
 	text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.projectUrl a {
+  color: #388dff;
+  padding: 20px;
+  display: inline-block;
+}
+
+.projectUrl a:hover {
+  color: #255da8;
+
 }
 
 .projectInformation>svg{

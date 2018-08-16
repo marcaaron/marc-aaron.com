@@ -21,6 +21,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               imgMock{
                 url
               }
+              deployUrl
             }
           }
         }

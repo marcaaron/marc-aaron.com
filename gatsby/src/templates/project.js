@@ -25,7 +25,12 @@ const ProjectTemplate = ({data}) => {
 				</div>
 				<i className="fas fa-code-branch fa-3x"></i>
 				<div className={styles.projectUrl}>
-					<a href={`http://${project.url}`}>{project.url}</a>
+          <div>
+  					<a href={`http://${project.url}`}><strong>GitHub Repo</strong></a>
+          </div>
+          <div>
+  					<a href={`http://${project.deployUrl}`}><strong>Live Version</strong></a>          
+          </div>
 				</div>
 			</div>
 		</div>
@@ -48,6 +53,7 @@ export const pageQuery = graphql`
       imgMock{
         url
       }
+      deployUrl
     }
   }
 `;

@@ -31,6 +31,7 @@ module.exports = {
               imgMock{
                 url
               }
+              deployUrl
             }
             posts {
               id

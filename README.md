@@ -3,4 +3,4 @@
 ![mind blown](https://marcaaron.github.io/tim%20and%20eric%20mind%20blown%20GIF-downsized.gif)
 
 - GraphCMS for updating Projects and Posts
-- Gatsby for Static Site Generating w/ GraphQL
+- Gatsby for Static Site Generating w/ GraphQL  

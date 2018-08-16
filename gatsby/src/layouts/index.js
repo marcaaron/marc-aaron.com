@@ -16,28 +16,21 @@ class Layout extends Component {
     const pathname = props.location.pathname;
     if(pathname === "/about" || pathname === "/links"){
       selected = pathname.slice(1, pathname.length);
+    }else if(pathname==="/posts"){
+      selected = 'links';
     }else{
-      selected = 'projects'
+      selected = 'projects';
     }
 		this.state = {
 			selected: selected,
 			projectIsOpen:false,
 			currentProject:{},
-			stickyTab: false,
-			killHeader: false
+			stickyTab: false
 		};
 	}
 
 	componentDidMount(){
-		window.addEventListener('resize',this._onResize);
 		window.addEventListener('scroll', this.isScrolling);
-	}
-
-	_onResize = () => {
-		if(window.innerWidth>575 && this.state.selected==='links'){
-			const selected = 'projects';
-			this.setState({selected});
-		}
 	}
 
 	isScrolling = () => {
@@ -81,7 +74,7 @@ class Layout extends Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header pathname={pathname} siteTitle={data.site.siteMetadata.title} />
+        <Header _onTabClick={this._onTabClick} pathname={pathname} siteTitle={data.site.siteMetadata.title} />
         <MediaQuery maxWidth={574}>
           <TabContainer
             _onTabClick={this._onTabClick}

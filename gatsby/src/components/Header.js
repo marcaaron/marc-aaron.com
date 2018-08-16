@@ -19,17 +19,17 @@ const renderName = (textArray, pathname) => {
   )
 };
 
-const Header = ({ siteTitle, pathname }) =>
+const Header = ({ siteTitle, pathname, _onTabClick }) =>
 <Fragment>
 	<MediaQuery maxWidth={574}>
-		<Link className={styles.header} to="/">
+		<Link className={styles.header} to="/" onClick={()=>_onTabClick('projects')}>
 			<span className={styles.name}>Marc Aaron Glasser</span>
 			<span className={styles.role}>Web Developer</span>
 		</Link>
 	</MediaQuery>
   <MediaQuery minWidth={575}>
   	<header className={styles.header}>
-  		<Link to="/" className={styles.headerLeft}>
+  		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
   			<div className={styles.backButton}
           style={
             pathname !== "/" ?
@@ -49,8 +49,8 @@ const Header = ({ siteTitle, pathname }) =>
   		<div className={styles.headerRight}>
   			<Links/>
         <div className={styles.headerRightNavLinks}>
-  				<Link to="/about" className={styles.aboutMeLink}>About Me</Link>
-  				<Link to="/posts" className={styles.aboutMeLink}>Posts</Link>
+  				<Link to="/about" onClick={()=>_onTabClick('about')} className={styles.aboutMeLink}>About Me</Link>
+  				<Link to="/posts" onClick={()=>_onTabClick('links')} className={styles.aboutMeLink}>Posts</Link>
         </div>
   		</div>
   	</header>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ArrowLeft } from './icons';
 import Link from 'gatsby-link';
+import styles from './TabContainer.module.css';
 
 class Tab extends Component {
   render() {
@@ -15,10 +16,10 @@ class Tab extends Component {
     return (
 			<div
         onClick={()=>handleClick(values.name)}
-        className={`tab tab-${values.name}`}
+        className={styles.tab}
         >
           {values.icon({size:20, color: values.color})}
-					<span key={`text_${values.name}`} style={textStyle} className="tab-text">{values.text}</span>
+					<span key={`text_${values.name}`} style={textStyle} className={styles.tabText}>{values.text}</span>
 			</div>
     );
   }

@@ -1,4 +1,4 @@
-.tab-container{
+.tabContainer{
 	height:60px;
 	display:flex;
 	align-items: center;
@@ -21,15 +21,15 @@
   cursor:pointer;
 }
 
-.tab-projects{
+.tabProjects{
 	border-right: 1px solid #d6d6d6;
 }
 
-.tab-links{
+.tabLinks{
 	border-left: 1px solid #d6d6d6;
 }
 
-.tab-text{
+.tabText{
 	font-size: 0.8em;
 	margin-top:5px;
 	color: #595959;

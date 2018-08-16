@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import './TabContainer.css';
+import styles from './TabContainer.module.css';
 import Tab from './Tab';
 import  { FABriefcase, FAUser, FALink } from './icons';
 
@@ -81,7 +81,7 @@ class TabContainer extends Component {
 
     return (
       <Fragment>
-  			<div key="t-container" className="tab-container" style={tabContainerStyle}>
+  			<div key="t-container" className={styles.tabContainer} style={tabContainerStyle}>
   				{
   					tabArray.map(tab=>
   						<Tab
@@ -94,7 +94,7 @@ class TabContainer extends Component {
   				}
 
   			</div>
-  			<div key="tri" className="triangle" style={triangleStyle} ></div>
+  			<div key="tri" className={styles.triangle} style={triangleStyle} ></div>
       </Fragment>
     )
   }

@@ -10,7 +10,7 @@
 /build
 /source/build
 /source/node_modules
-/public
+/.cache
 
 # misc
 .DS_Store

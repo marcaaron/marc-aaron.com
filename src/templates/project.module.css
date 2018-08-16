@@ -1,0 +1,85 @@
+.projectSingleContainer{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fffefa;
+	border:solid 1px #d6d6d6;
+
+}
+
+.projectName{
+	text-align: left;
+	margin-top:0.5em;
+	font-weight:400;
+	font-size: 1.8em;
+}
+
+.projectImage{
+	margin:10px;
+	box-shadow: 0 0 2px 5px #d6d6d6;
+	max-width:100%;
+	box-sizing: border-box;
+}
+
+.projectTitle{
+	font-size:1.3em;
+	margin:10px 10px 0 10px;
+	text-align: center;
+	font-weight: 600;
+}
+
+.projectTools{
+	text-align: center;
+	font-size:1.2em;
+	padding:0 20px;
+	margin-bottom:20px;
+}
+
+.projectDescription{
+	font-size:1.2em;
+	padding:10px;
+	margin:5px 10px;
+}
+.projectUrl{
+	margin:20px;
+	margin-top:10px;
+	text-align: center;
+}
+
+.projectInformation>svg{
+	display:block;
+	margin:0 auto;
+}
+
+@media screen and (min-width:575px){
+	.projectImage{
+		border:none;
+		width:25%;
+		box-shadow: none;
+		margin-left:25px;
+	}
+	.projectSingleContainer{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: flex-start;
+		border:none;
+	}
+	.projectName{
+		width:100%;
+		font-size: 2em;
+		margin-bottom:15px;
+	}
+	.projectInformation{
+		flex:1;
+		display:flex;
+		flex-direction:column;
+		margin-right:25px;
+	}
+}
+
+@media screen and (min-width:880px){
+	.projectNameTag{
+		font-size: 0.8em;
+	}
+}

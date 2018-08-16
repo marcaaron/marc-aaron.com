@@ -1,0 +1,21 @@
+.aboutMeParagraph{
+	background:#fffefa;
+	padding:30px;
+	font-size: 1.1em;
+	width:100%;
+	box-sizing: border-box;
+}
+
+.avatar{
+	display:block;
+	max-width:85%;
+	border-radius: 50%;
+	margin:0 auto;
+	transition: max-width 0.3s;
+}
+
+@media screen and (min-width:420px){
+	.avatar{
+		max-width:245px;
+	}
+}

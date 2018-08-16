@@ -12,8 +12,17 @@ import './index.css';
 class Layout extends Component {
 	constructor(props){
 		super(props);
-    let selected = '';
+		this.state = {
+			selected: 'projects',
+			projectIsOpen:false,
+			currentProject:{},
+			stickyTab: false
+		};
+	}
+
+  static getDerivedStateFromProps(props, state) {
     const pathname = props.location.pathname;
+    let selected = '';
     if(pathname === "/about" || pathname === "/links"){
       selected = pathname.slice(1, pathname.length);
     }else if(pathname==="/posts"){
@@ -21,13 +30,16 @@ class Layout extends Component {
     }else{
       selected = 'projects';
     }
-		this.state = {
-			selected: selected,
-			projectIsOpen:false,
-			currentProject:{},
-			stickyTab: false
-		};
-	}
+    console.log(selected);
+    if (selected !== state.selected) {
+      return {
+        selected
+      };
+    }
+    // Return null if the state hasn't changed
+    return null;
+  }
+
 
 	componentDidMount(){
 		window.addEventListener('scroll', this.isScrolling);

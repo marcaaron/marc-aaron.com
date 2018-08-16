@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styles from './index.module.css';
 import Header from '../components/Header'
 import Footer from '../components/Footer';
 import TabContainer from '../components/TabContainer';
-import MediaQuery from 'react-responsive';
+import Media from "react-media";
 
 import './index.css';
 
@@ -75,14 +75,18 @@ class Layout extends Component {
           ]}
         />
         <Header _onTabClick={this._onTabClick} pathname={pathname} siteTitle={data.site.siteMetadata.title} />
-        <MediaQuery maxWidth={574}>
-          <TabContainer
-            _onTabClick={this._onTabClick}
-            selected={selected}
-            stickyTab={stickyTab}
-          />
-          <div className={styles.trapezoid} style={trapezoidStyle}/>
-        </MediaQuery>
+        <Media query="(max-width: 574px)">
+          {matches => matches &&
+            <Fragment>
+              <TabContainer
+                _onTabClick={this._onTabClick}
+                selected={selected}
+                stickyTab={stickyTab}
+              />
+              <div className={styles.trapezoid} style={trapezoidStyle}/>
+            </Fragment>
+          }
+        </Media>
         <div className={styles.card}>
           {children()}
         </div>

@@ -1,17 +1,17 @@
 import React, { Component, Fragment, createRef } from 'react';
-import MediaQuery from 'react-responsive';
 import LinkList from './LinkList';
+import Media from "react-media";
 
 class Links extends Component {
   render() {
     return (
       <Fragment>
-        <MediaQuery key="_mW767" maxWidth={574}>
-          <LinkList size={40}/>
-        </MediaQuery>
-        <MediaQuery key="_mW768" minWidth={575}>
-          <LinkList size={24}/>
-        </MediaQuery>
+        <Media query="(max-width: 574px)">
+          { matches => matches && <LinkList size={40}/> }
+        </Media>
+        <Media query="(min-width: 575px)">
+          { matches => matches && <LinkList size={24}/> }
+        </Media>
       </Fragment>
     );
   }

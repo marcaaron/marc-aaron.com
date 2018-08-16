@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Helmet from "react-helmet";
-import MediaQuery from 'react-responsive';
 import styles from './project.module.css';
+import Media from "react-media";
 
 export default class ProjectTemplate extends Component {
   render(){
@@ -12,12 +12,16 @@ export default class ProjectTemplate extends Component {
   			<div className={styles.projectName}>
   				{project.name}
   			</div>
-  			<MediaQuery maxWidth={574}>
-  				<img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.img.url}/>
-  			</MediaQuery>
-  			<MediaQuery minWidth={575}>
-  				<img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.imgMock.url}/>
-  			</MediaQuery>
+  			<Media query="(max-width: 574px)">
+          { matches => matches &&
+            <img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.img.url}/>
+          }
+  			</Media>
+  			<Media query="(min-width: 575px)">
+  				{ matches => matches &&
+            <img className={styles.projectImage} alt={`A screenshot of the ${project.name} application.`} src={project.imgMock.url}/>
+          }
+  			</Media>
   			<div className={styles.projectInformation}>
   				<div className={styles.projectTitle}>
   					<em>{project.title}</em>

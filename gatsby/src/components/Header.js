@@ -4,7 +4,7 @@ import Links from './Links'
 import { name, role, killStyles, baseStyle } from '../util/header-utils';
 import { ArrowLeft } from './icons';
 import styles from './Header.module.css';
-import MediaQuery from 'react-responsive';
+import Media from "react-media";
 
 // Render Animation state of Header depending on whether we are at root
 const renderName = (textArray, pathname) => {
@@ -21,39 +21,44 @@ const renderName = (textArray, pathname) => {
 
 const Header = ({ siteTitle, pathname, _onTabClick }) =>
 <Fragment>
-	<MediaQuery maxWidth={574}>
-		<Link className={styles.header} to="/" onClick={()=>_onTabClick('projects')}>
-			<span className={styles.name}>Marc Aaron Glasser</span>
-			<span className={styles.role}>Web Developer</span>
-		</Link>
-	</MediaQuery>
-  <MediaQuery minWidth={575}>
-  	<header className={styles.header}>
-  		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
-  			<div className={styles.backButton}
-          style={
-            pathname !== "/" ?
-            {transform:'scale(1,1)', opacity:'1'} :
-            {transform:'scale(0,0)',opacity:'0'}
-          }>
-          <ArrowLeft/>
-  				<span>&nbsp; Projects</span>
-  			</div>
-  			<div className={styles.nameBox}>
-          {renderName(name, pathname)}
-  			</div>
-  			<div className={styles.roleBox}>
-          {renderName(role, pathname)}
-  			</div>
+	<Media query="(max-width:574px)">
+    {matches => matches &&
+  		<Link className={styles.header} to="/" onClick={()=>_onTabClick('projects')}>
+  			<span className={styles.name}>Marc Aaron Glasser</span>
+  			<span className={styles.role}>Web Developer</span>
   		</Link>
-  		<div className={styles.headerRight}>
-  			<Links/>
-        <div className={styles.headerRightNavLinks}>
-  				<Link to="/about" onClick={()=>_onTabClick('about')} className={styles.aboutMeLink}>About Me</Link>
-  				<Link to="/posts" onClick={()=>_onTabClick('links')} className={styles.aboutMeLink}>Posts</Link>
-        </div>
-  		</div>
-  	</header>
-  </MediaQuery>
+    }
+	</Media>
+  <Media query="(min-width: 575px)">
+    {
+      matches => matches &&
+      	<header className={styles.header}>
+      		<Link to="/" className={styles.headerLeft} onClick={()=>_onTabClick('projects')}>
+      			<div className={styles.backButton}
+              style={
+                pathname !== "/" ?
+                {transform:'scale(1,1)', opacity:'1'} :
+                {transform:'scale(0,0)',opacity:'0'}
+              }>
+              <ArrowLeft/>
+      				<span>&nbsp; Projects</span>
+      			</div>
+      			<div className={styles.nameBox}>
+              {renderName(name, pathname)}
+      			</div>
+      			<div className={styles.roleBox}>
+              {renderName(role, pathname)}
+      			</div>
+      		</Link>
+      		<div className={styles.headerRight}>
+      			<Links/>
+            <div className={styles.headerRightNavLinks}>
+      				<Link to="/about" onClick={()=>_onTabClick('about')} className={styles.aboutMeLink}>About Me</Link>
+      				<Link to="/posts" onClick={()=>_onTabClick('links')} className={styles.aboutMeLink}>Posts</Link>
+            </div>
+      		</div>
+      	</header>
+      }
+  </Media>
 </Fragment>
 export default Header

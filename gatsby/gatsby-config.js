@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Marc Aaron Glasser',
@@ -14,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-graphcms`,
       options: {
-        endpoint: `https://api-euwest.graphcms.com/v1/cjktvig1j06ua01aqmi3zb5w1/master`,
+        endpoint: process.env.ENDPOINT,
         query: `
           {
             projects {
